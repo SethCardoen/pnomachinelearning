@@ -11,6 +11,7 @@ def ysample(x,f,e=1):
 		vector.append([f(i)+(numpy.random.normal(0,1,1)[0])])
 	vector = np.asarray(vector)	
 	return vector	
+
 def main():
 	x = sp.symbols('s')
 	def f(x): return 2*x
