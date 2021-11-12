@@ -18,4 +18,6 @@ def main():
 	print(xsample(8))
 	print(ysample(xsample(5000),f))
 
-main()
+if __name__ == "__main__":
+   # stuff only to run when not called via 'import' here
+   main()
