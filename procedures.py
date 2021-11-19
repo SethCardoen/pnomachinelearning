@@ -26,22 +26,25 @@ def ols(y,x):
     return (b,a)
 
 def knn(x0, y, x,k):
-    lenghtarray = []
-    for i in range(len(x)):
-        lenghtarray.append(abs(x[i] - x0))
+	lenghtarray = []
+	for i in range(len(x)):
+		lenghtarray.append(abs(x[i] - x0))
        
-    shortest = sorted(lenghtarray)[:k]
+	lengtharrayNumpy = x - x0
+	print(lengtharrayNumpy)
+	
+	shortest = sorted(lenghtarray)[:k]
 
-    K = []
-    for item in shortest:
-        K.append(lenghtarray.index(item)) 
+	K = []
+	for item in shortest:
+		K.append(lenghtarray.index(item)) 
         # K = lijst met indexen voor dichtste punten
      
-    y = 1/k * sum(y[K])
+	y = 1/k * sum(y[K])
     
-    #value = np.mean(shortest) moeten nog werken met de indexen want y (wordt momenteel niet gebruikt)
+	#value = np.mean(shortest) moeten nog werken met de indexen want y (wordt momenteel niet gebruikt)
     
-    return y
+	return y
 
 def olsPlot(y, x, p=0, q=1):
 	(a,b) = ols(y, x)
